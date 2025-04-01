@@ -1,17 +1,9 @@
-def merge_sorted_arrays(arr1, arr2):
-    n, m = len(arr1), len(arr2)
+def is_rotation(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    return s2 in (s1 + s1)
 
-    
-    for i in range(n):
-        if arr1[i] > arr2[0]:  
-            arr1[i], arr2[0] = arr2[0], arr1[i]  
-            
-            # sort arr2 so it remains sorted
-            arr2.sort()
-
-
-arr1 = [1, 4, 7, 8, 10]
-arr2 = [2, 3, 9]
-
-merge_sorted_arrays(arr1, arr2)
-print("Merged Arrays:", arr1, arr2)
+# Example usage
+s1 = "waterbottle"
+s2 = "erbottlewat"
+print(is_rotation(s1, s2))
